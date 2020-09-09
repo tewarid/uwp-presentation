@@ -9,25 +9,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -39,7 +32,12 @@
   <p class="date">September 9, 2020</p>
 </section>
 
-<section><section id="universal-windows-platform-development" class="title-slide slide level1"><h1>Universal Windows Platform Development</h1></section><section id="objectives" class="slide level2">
+<section>
+<section id="universal-windows-platform-development" class="title-slide slide level1">
+<h1>Universal Windows Platform Development</h1>
+
+</section>
+<section id="objectives" class="slide level2">
 <h2>Objectives</h2>
 <ul>
 <li>Brief history of Native Windows Development</li>
@@ -48,7 +46,8 @@
 <li>Distribute and update apps</li>
 <li>Monitor apps</li>
 </ul>
-</section><section id="brief-history-of-native-windows-development" class="slide level2">
+</section>
+<section id="brief-history-of-native-windows-development" class="slide level2">
 <h2>Brief history of Native Windows Development</h2>
 <ul>
 <li>Win32 API, C/C++, MFC/ATL, COM</li>
@@ -58,7 +57,8 @@
 <li>Rust/WinRT, .NET Core 3.1, ASP.NET Core, Blazor</li>
 <li>.NET 5, WinUI 3, MAUI .NET</li>
 </ul>
-</section><section id="universal-windows-platform-programming" class="slide level2">
+</section>
+<section id="universal-windows-platform-programming" class="slide level2">
 <h2>Universal Windows Platform programming</h2>
 <ul>
 <li>Multiple form factors
@@ -71,7 +71,8 @@
 <li>Sand-boxed apps distributed via Store or Side-loaded</li>
 <li>Modern Windows Runtime (WinRT) API</li>
 </ul>
-</section><section id="cwinrt-and-rustwinrt" class="slide level2">
+</section>
+<section id="cwinrt-and-rustwinrt" class="slide level2">
 <h2>C++/WinRT and Rust/WinRT</h2>
 <ul>
 <li>Author components using C++17, C#, or Rust</li>
@@ -79,7 +80,8 @@
 <li>Consume C and C++ code and libraries directly in C++</li>
 <li>Consume authored components in .NET and Python</li>
 </ul>
-</section><section id="user-interface-programming-with-xaml" class="slide level2">
+</section>
+<section id="user-interface-programming-with-xaml" class="slide level2">
 <h2>User interface programming with XAML</h2>
 <ul>
 <li>XML based responsive design language</li>
@@ -89,7 +91,8 @@
 <li>Support for localization and accessibility</li>
 <li>Appropriate resource sizes loaded automatically</li>
 </ul>
-</section><section id="uwp-demos" class="slide level2">
+</section>
+<section id="uwp-demos" class="slide level2">
 <h2>UWP demos</h2>
 <ul>
 <li>Visual Studio 2019 overview</li>
@@ -98,7 +101,8 @@
 <li><a href="https://www.microsoft.com/en-us/p/xaml-controls-gallery/9msvh128x2zt">XAML Controls Gallery</a></li>
 <li><a href="https://www.microsoft.com/en-us/p/windows-community-toolkit-sample-app/9nblggh4tlcq">Windows Community Toolkit Sample App</a></li>
 </ul>
-</section><section id="app-lifecycle" class="slide level2">
+</section>
+<section id="app-lifecycle" class="slide level2">
 <h2>App lifecycle</h2>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/windows/uwp/launch-resume/app-lifecycle">States</a>
@@ -115,15 +119,16 @@
 <ul>
 <li>Triggers
 <ul>
-<li>Only out-of-process, e.g. <a href="https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger?view=winrt-18362">Device Servicing Trigger</a></li>
-<li>In- or out-of-process, e.g. <a href="https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.timetrigger">Time Trigger</a></li>
+<li>Only out-of-process, e.g. <a href="https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger?view=winrt-18362">Device Servicing Trigger</a></li>
+<li>In- or out-of-process, e.g. <a href="https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.timetrigger">Time Trigger</a></li>
 </ul></li>
 <li><a href="https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service">App Services</a></li>
 <li><a href="https://docs.microsoft.com/en-us/windows/uwp/networking/background-transfers">Background transfer</a></li>
 <li><a href="https://docs.microsoft.com/en-us/windows/uwp/launch-resume/run-minimized-with-extended-execution">Extended execution</a></li>
 </ul></li>
 </ul>
-</section><section id="distribute-and-update-apps" class="slide level2">
+</section>
+<section id="distribute-and-update-apps" class="slide level2">
 <h2>Distribute and update apps</h2>
 <ul>
 <li>Visual Studio
@@ -145,13 +150,17 @@
     </div>
   </div>
 
-  <script src="reveal.js/lib/js/head.min.js"></script>
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Push each slide change to the browser history
         history: true,
@@ -166,11 +175,11 @@
         minScale: 0.2,
         maxScale: 1.5,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

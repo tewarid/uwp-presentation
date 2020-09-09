@@ -5,8 +5,7 @@
 - Brief history of Native Windows Development
 - Universal Windows Platform programming
 - Build automation
-- Distribute and update apps
-- Monitor apps
+- Distribute, update, and monitor apps
 
 ## Brief history of Native Windows Development
 

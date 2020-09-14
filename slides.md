@@ -4,8 +4,7 @@
 
 - Brief history of Native Windows Development
 - Universal Windows Platform programming
-- Build automation
-- Distribute, update, and monitor apps
+- Build, distribute, update, and monitor apps
 
 ## Brief history of Native Windows Development
 
@@ -66,7 +65,7 @@
   - [Background transfer](https://docs.microsoft.com/en-us/windows/uwp/networking/background-transfers)
   - [Extended execution](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/run-minimized-with-extended-execution)
 
-## Distribute and update apps
+## Build, distribute, update, and monitor apps
 
 - Visual Studio
   - Generating app for store and side-loading
